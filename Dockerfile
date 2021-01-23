@@ -9,15 +9,17 @@ ARG V8_VERSION=master
 RUN apt-get update && apt-get upgrade -yqq
 
 RUN DEBIAN_FRONTEND=noninteractive \
-    apt-get install bison \
-                    cdbs \
-                    curl \
-                    flex \
-                    g++ \
-                    git \
-                    python \
-                    vim \
-                    pkg-config -yqq
+	apt-get install bison \
+	                cdbs \
+	                curl \
+	                flex \
+	                g++ \
+	                git \
+	                python \
+	                vim \
+	                pkg-config -yqq \
+	                lsb-core \
+	                gcc-multilib
 
 WORKDIR /
 RUN git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
